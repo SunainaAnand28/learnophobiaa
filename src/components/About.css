@@ -1,0 +1,133 @@
+.about-section {
+    position: relative;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.section-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 24px;
+}
+
+.about-image-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.about-image-glow {
+    width: 350px;
+    height: 350px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: linear-gradient(135deg, rgba(103, 76, 156, 0.4) 0%, rgba(22, 11, 36, 0.8) 100%);
+    animation: floatAvatar 6s ease-in-out infinite;
+}
+
+.about-avatar {
+    width: 150px;
+    height: 150px;
+    background: var(--bg-dark);
+    border-radius: 50%;
+    border: 4px solid var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--glow-shadow);
+    z-index: 5;
+}
+
+.about-decoration {
+    position: absolute;
+    border-radius: 20px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+}
+
+.shape-a {
+    width: 100px;
+    height: 100px;
+    top: -20px;
+    right: -20px;
+    animation: floatAvatar 5s ease-in-out infinite alternate;
+}
+
+.shape-b {
+    width: 80px;
+    height: 80px;
+    bottom: 20px;
+    left: -30px;
+    border-radius: 50%;
+    animation: floatAvatar 7s ease-in-out infinite alternate-reverse;
+}
+
+.about-content {
+    flex: 1;
+}
+
+.about-text {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.about-stats {
+    display: flex;
+    gap: 30px;
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid var(--glass-border);
+}
+
+.stat-item h3 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+.stat-item span {
+    color: var(--secondary);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+@keyframes floatAvatar {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-image-wrapper {
+        margin-bottom: 40px;
+    }
+
+    .about-stats {
+        justify-content: center;
+    }
+}

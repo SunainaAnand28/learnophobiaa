@@ -1,0 +1,169 @@
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding-top: 80px;
+}
+
+.hero-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    width: 100%;
+}
+
+.hero-content {
+    max-width: 650px;
+    z-index: 10;
+}
+
+.hero-title {
+    font-size: clamp(3rem, 8vw, 5.5rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -2px;
+    margin-bottom: 24px;
+}
+
+.hero-subtitle {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: var(--secondary);
+    line-height: 1.6;
+    margin-bottom: 40px;
+    max-width: 500px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+    box-shadow: var(--glow-shadow);
+}
+
+.btn-primary:hover {
+    background: var(--primary-light);
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 10px 30px rgba(103, 76, 156, 0.6);
+}
+
+.btn-secondary {
+    background: var(--glass-bg);
+    color: white;
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(12px);
+}
+
+.btn-secondary:hover {
+    border-color: var(--primary-light);
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: var(--glass-shadow);
+}
+
+/* Floating elements CSS */
+.hero-floating-elements {
+    position: absolute;
+    top: 10%;
+    right: 15%;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.hero-floating-elements.right {
+    top: 40%;
+    right: 5%;
+}
+
+.hero-card {
+    padding: 20px 30px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.card-icon {
+    font-size: 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.card-1 {
+    animation: floatCard 6s ease-in-out infinite;
+    transform: rotate(-5deg);
+}
+
+.card-2 {
+    animation: floatCard 8s ease-in-out infinite alternate-reverse;
+    margin-left: -50px;
+    transform: rotate(3deg);
+}
+
+.card-3 {
+    animation: floatCard 7s ease-in-out infinite;
+    transform: rotate(5deg);
+}
+
+@keyframes floatCard {
+    0% {
+        transform: translateY(0) rotate(-2deg);
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(2deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(-2deg);
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .hero-floating-elements {
+        display: none;
+        /* Hide floating cards on smaller screens for cleaner look */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hero-section {
+        text-align: center;
+    }
+
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+}
