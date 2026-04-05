@@ -5,7 +5,7 @@ import './Playlists.css';
 
 const PLAYLISTS = [
     { id: 1, title: 'Computer Science Basics', count: 12, color: 'var(--primary)' },
-    { id: 2, title: 'React Masterclass', count: 24, color: '#8a6cbd' },
+    { id: 2, title: 'IT Tools and Network Basics', count: 24, color: '#8a6cbd' },
     { id: 3, title: 'Backend with Node.js', count: 18, color: '#aa8de3' },
     { id: 4, title: 'Database Design', count: 8, color: '#3e2070' },
 ];
