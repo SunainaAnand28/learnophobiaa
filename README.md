@@ -110,8 +110,8 @@ This is a safe and inclusive space for all learners. We expect all contributors 
 Have a question, idea, or feedback?
 
 - 🐛 **Bug Reports / Feature Requests** → [Open an Issue](https://github.com/your-username/learnophobiaa/issues)
-- 💡 **General Discussion** → Join our community forum / Discord *(link coming soon)*
-- 📧 **Email** → learnophobiaa@gmail.com *(placeholder)*
+<!-- - 💡 **General Discussion** → Join our community forum / Discord *(link coming soon)* -->
+- 📧 **Email** → learnophobiaa@gmail.com
 
 ---
 
