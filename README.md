@@ -95,7 +95,7 @@ Learnophobiaa thrives because of its community. We welcome contributions of all 
 4. **Push** to your branch: `git push origin feature/your-feature-name`
 5. **Open** a Pull Request 🎯
 
-Please read our [CONTRIBUTING.md](./CONTRIBUTING.md) for detailed guidelines.
+<!-- Please read our [CONTRIBUTING.md](./CONTRIBUTING.md) for detailed guidelines. -->
 
 ---
 
