@@ -2,17 +2,52 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiPlay } from 'react-icons/fi';
 import './YouTubeVideos.css';
+import CPU_Architecture from '../assets/cpu_architecture.png';
+import Compiler_Interpreter from '../assets/compiler_interpreter.png';
+import Coding_Apps from '../assets/coding_apps.png';
+import Analog_Digital from '../assets/ana_digital.png';
+import Hardware_Software from '../assets/hard_soft.png';
 
 // Mock data (since auto-fetch requires YouTube API key)
 const VIDEO_DATA = [
-    { id: '1', title: 'Understanding CPU Architecture', category: 'Hardware', thumb: 'https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60' },
-    { id: '2', title: 'React Performance Optimization', category: 'Software', thumb: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60' },
-    { id: '3', title: 'Python Basics in 10 Minutes', category: 'Programming', thumb: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60' },
-    { id: '4', title: 'How RAM Works visually explained', category: 'Hardware', thumb: 'https://images.unsplash.com/photo-1562976540-1502c2145186?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60' },
-    { id: '5', title: 'CSS Grid vs Flexbox', category: 'Programming', thumb: 'https://images.unsplash.com/photo-1507721999472-8ed4421c4af2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60' },
-    { id: '6', title: 'What is an API? - Basics', category: 'Basics', thumb: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60' },
-    { id: '7', title: 'Git & GitHub Shorts', category: 'Shorts', thumb: 'https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60' },
-    { id: '8', title: 'Software Design Patterns', category: 'Software', thumb: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60' },
+    {
+        id: '1',
+        title: 'Understanding CPU Architecture',
+        category: 'Hardware',
+        thumb: CPU_Architecture,
+        link: 'https://youtu.be/WS2Y9ciJHCg?si=Isp6MV57ba3TIA2F'
+    },
+    {
+        id: '2',
+        title: 'Compiler Interpreter in 1 minute',
+        category: 'Software',
+        thumb: Compiler_Interpreter,
+        link: ''
+    },
+    {
+        id: '3',
+        title: 'Best Coding Apps for Programming on Mobile',
+        category: 'Programming',
+        thumb: Coding_Apps,
+        link: ''
+    },
+    {
+        id: '4',
+        title: 'Analog and Digital Computer',
+        category: 'Hardware',
+        thumb: Analog_Digital,
+        link: ''
+    },
+    {
+        id: '5',
+        title: 'Hardware & Software',
+        category: 'Basics',
+        thumb: Hardware_Software,
+
+    },
+    //     { id: '6', title: 'What is an API? - Basics', category: 'Basics', thumb:  },
+    //     { id: '7', title: 'Git & GitHub Shorts', category: 'Shorts', thumb:  },
+    //     { id: '8', title: 'Software Design Patterns', category: 'Software', thumb:  },
 ];
 
 const CATEGORIES = ['All', 'Hardware', 'Software', 'Programming', 'Basics', 'Shorts'];
@@ -37,7 +72,6 @@ const YouTubeVideos = () => {
                     <h2 className="section-title">Latest <span className="gradient-text">Tutorials</span></h2>
                     <p className="section-subtitle">Level up your skills with our deep dives.</p>
                 </motion.div>
-
                 <motion.div
                     className="filter-container"
                     initial={{ opacity: 0, y: 20 }}
@@ -59,8 +93,11 @@ const YouTubeVideos = () => {
                 <motion.div layout className="videos-grid">
                     <AnimatePresence>
                         {filteredVideos.map((video) => (
+                           
+                           
                             <motion.div
                                 key={video.id}
+                                href={video.link}
                                 layout
                                 initial={{ opacity: 0, scale: 0.9 }}
                                 animate={{ opacity: 1, scale: 1 }}
@@ -68,12 +105,13 @@ const YouTubeVideos = () => {
                                 transition={{ duration: 0.4 }}
                                 className="video-card glass-card"
                             >
-                                <div className="video-thumb-wrapper">
+                               <div className="video-thumb-wrapper">
                                     <img src={video.thumb} alt={video.title} className="video-thumb" />
                                     <div className="play-overlay">
                                         <FiPlay className="play-icon" />
                                     </div>
                                 </div>
+                            
                                 <div className="video-info">
                                     <span className="video-category">{video.category}</span>
                                     <h3 className="video-title">{video.title}</h3>
