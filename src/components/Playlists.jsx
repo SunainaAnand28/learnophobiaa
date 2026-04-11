@@ -4,10 +4,10 @@ import { FiList, FiPlay } from 'react-icons/fi';
 import './Playlists.css';
 
 const PLAYLISTS = [
-    { id: 1, title: 'Computer Science Basics', count: 12, color: 'var(--primary)' },
-    { id: 2, title: 'IT Tools and Network Basics', count: 24, color: '#8a6cbd' },
-    { id: 3, title: 'Backend with Node.js', count: 18, color: '#aa8de3' },
-    { id: 4, title: 'Database Design', count: 8, color: '#3e2070' },
+    { id: 1, title: 'IT Tool and Network Basics', count: 6, color: 'var(--primary)' },
+    { id: 2, title: 'Basics of Programming', count: 3, color: '#8a6cbd' },
+    { id: 3, title: 'Software Requirement Specification', count: 1, color: '#aa8de3' },
+    { id: 4, title: 'HTML CSS Basic Projects', count: 3, color: '#3e2070' },
 ];
 
 const Playlists = () => {
